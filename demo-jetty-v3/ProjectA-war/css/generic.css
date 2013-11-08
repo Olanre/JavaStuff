@@ -1,0 +1,18 @@
+html { background: #C0C0C0}
+p.p2 {font-size:25px;
+  font-style: oblique;
+   }
+ul{ 
+   font-family:Verdana; font-size : 15pt;
+}
+a:link {text-decoration:none;}    /* unvisited link */
+a:visited {text-decoration:none;} /* visited link */
+a:hover {text-decoration:underline;}   /* mouse over link */
+a:active {text-decoration:underline;}  /* selected link */
+   
+ 
+#content { margin-left:  15%; }
+#navi{float: left; width: 15%; display: inline-block}
+#container{margin-left: 10pts;
+           margin-right: 10pts;
+           }

@@ -1,0 +1,17 @@
+create table Users (
+    id integer primary key,
+    username text not null unique,
+    user-email text not null unique,
+    pwd text not null,
+    role_id integer primary key not null unique
+    );
+insert into "users" VALUES(1,'rod','rod@mun.ca', 'rod', '2');
+insert into "users" VALUES(2,'dor','dor@mun.ca', 'dor', '1');
+insert into "users" VALUES(1,'ooo524','ooo524@mun.ca', 'ooo524', '2');
+create table Roles (
+    id integer primary key,
+    role text not null unique);
+insert into "roles" VALUES(1,'User');
+insert into "roles" VALUES(2,'Administrator');
+
+.dump

@@ -1,0 +1,12 @@
+/*html {background-image:url('image.jpg');}  Commented out for now, will be added later*/
+p.p2 {font-size:35px;
+  font-style: oblique;
+   color:blue;
+ 
+   }
+h1{ style="background-color:white;"}
+#content { margin-left:  15%; }
+#navi{float: left; width: 15%;}
+#container{margin-left: 10pts;
+           margin-right: 10pts;
+           }

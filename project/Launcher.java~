@@ -1,0 +1,55 @@
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.geom.Ellipse2D;
+import java.awt.Stroke;
+import java.awt.BasicStroke;
+import java.awt.Dimension; 
+import java.awt.geom.Rectangle2D;
+import java.awt.geom.Line2D;
+import java.awt.geom.RoundRectangle2D;
+import java.awt.EventQueue;
+import java.awt.geom.Path2D; 
+import javax.swing.JPanel;
+import javax.swing.JFrame;
+
+/** Class to create an object which is a vertical bar
+ *@author Olanrewaju Okunlola
+ */
+public class Launcher{
+    
+    public double y = 0.0;
+    public double y2 = 0.0;
+    public double x = 0.0; 
+     
+    Rectangle2D.Double launchbar = new Rectangle2D.Double(); 
+    
+    
+    private Color barcolor = Color.yellow;
+
+    /** Method to chage object movement i.e. 
+     *where the object shall go
+     *@param x and y which are the coordinate variables of the current position
+     */
+    public void move( double j){  
+        this.y2 = this.y2 + j; 
+    }
+    
+    
+    /* Draws shapes and fills them with color
+     *@ param g2d which is a Graphics Object
+     * draws based on x and y instance variable coordinates
+     */
+    public void draw(Graphics2D g2d){
+        launchbar.x = this.x+560.0;
+        launchbar.y = this.y2+500.0;
+        launchbar.width = 20.0;
+        launchbar.height = 60.0; 
+        g2d.setColor( barcolor );
+        g2d.draw( launchbar);
+        Line2D.Double bar1 = new Line2D.Double(x+555, y+100, x+555, y+600);
+        g2d.draw( bar1);
+        
+        
+    }
+}

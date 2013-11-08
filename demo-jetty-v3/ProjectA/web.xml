@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+    http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" 
+    version="3.0">
+
+    <display-name>BPEdit</display-name>
+
+    <!-- handels static content -->
+    <servlet>
+        <servlet-name>default</servlet-name>
+        <servlet-class>org.eclipse.jetty.servlet.DefaultServlet</servlet-class>
+        <init-param>
+            <param-name>dirAllowed</param-name>
+            <param-value>false</param-value>
+        </init-param>
+        <init-param>
+            <param-name>cacheControl</param-name>
+            <param-value>no-cache,no-store,must-revalidate</param-value>
+       </init-param>
+    </servlet>
+
+   <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+
+
+   <!-- The following stanza is for the Login Page method only -->
+    <servlet>
+        <description> Login Page </description>
+        <display-name>Login</display-name>
+        
+        <servlet-name>Login</servlet-name>
+       <!--<jsp-file>Login.jsp</jsp-file>-->
+        <servlet-class>servlets.Login</servlet-class>
+        <init-param>
+            <param-name>css</param-name>
+            <param-value>loginpage.css</param-value>
+        </init-param>
+        <init-param>
+            <param-name>js</param-name>
+            <param-value>local_ajax.js, login.js</param-value>
+        </init-param>
+        <init-param>
+            <param-name>title</param-name>
+            <param-value>Login Page</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/Loggin/*</url-pattern>
+         <url-pattern>Loggin/check_user/*</url-pattern>
+        
+    </servlet-mapping> 
+
+    
+    <!-- The following stanza is for the project management method only -->
+    <servlet>
+        <description> Admin Project Management </description>
+        <display-name>AdminProjects</display-name>
+        <servlet-name>AdminProjects</servlet-name>
+        <!--<jsp-file>/admin/adminprojects.jsp</jsp-file>-->
+        <servlet-class>servlets.AdminProjects</servlet-class>
+        <init-param>
+            <param-name>css</param-name>
+            <param-value>generic.css</param-value>
+        </init-param>
+        <init-param>
+            <param-name>js</param-name>
+            <param-value>local_ajax.js, admin_projs.js</param-value>
+        </init-param>
+        <init-param>
+            <param-name>title</param-name>
+            <param-value>Admin Project Management</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AdminProjects</servlet-name>
+       
+        <url-pattern>/admin/adminprojects/*</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- The following stanza is for the User Account Management method only -->
+    <servlet>
+        <description>User Accounts</description>
+        <display-name>UserAccounts</display-name>
+        <servlet-name>UserAccounts</servlet-name>
+       <!-- <jsp-file>/admin/user-manage.jsp</jsp-file> -->
+        <servlet-class>servlets.UserAccounts</servlet-class>
+        <init-param>
+            <param-name>css</param-name>
+            <param-value>generic.css</param-value>
+        </init-param>
+        <init-param>
+            <param-name>js</param-name>
+            <param-value>local_ajax.js, ua.js</param-value>
+        </init-param>
+        <init-param>
+            <param-name>title</param-name>
+            <param-value>User Accounts Management</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserAccounts</servlet-name>
+        <url-pattern>/admin/user_manage/*</url-pattern>
+    </servlet-mapping>
+
+ 
+    <!-- The following stanza is for the Project Descrption method only -->
+    <servlet>
+        <description>Project Description</description>
+        <display-name>Project_Description</display-name>
+        <servlet-name>Project_Description</servlet-name>
+        <!--<jsp-file>/project/project-descrip</jsp-file>-->
+        <servlet-class>servlets.Project_Description</servlet-class>
+        <init-param>
+            <param-name>css</param-name>
+            <param-value>webpage5.css</param-value>
+        </init-param>
+        <init-param>
+            <param-name>js</param-name>
+            <param-value>local_ajax.js, proj-description.js</param-value>
+        </init-param>
+        <init-param>
+            <param-name>title</param-name>
+            <param-value>Project Description</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Project_Description</servlet-name>
+        <url-pattern>/project/proj_descrip/*</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- The following stanza is for the User Projects List method only -->
+    <servlet>
+        <description>UserProjects</description>
+        <display-name>UserProjects</display-name>
+        <servlet-name>UserProjects</servlet-name>
+        <!--<jsp-file>/project/project-descrip.jsp</jsp-file>-->
+        <servlet-class>servlets.UserProjects</servlet-class>
+        <init-param>
+            <param-name>css</param-name>
+            <param-value>generic.css</param-value>
+        </init-param>
+        <init-param>
+            <param-name>js</param-name>
+            <param-value>local_ajax.js, user-projs.js</param-value>
+        </init-param>
+        <init-param>
+            <param-name>title</param-name>
+            <param-value>User Projects</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UserProjects</servlet-name>
+        <url-pattern>/project/project_list/*</url-pattern>
+    </servlet-mapping>
+  
+    
+    <!-- The following stanza is for the Project tables page method only -->
+    <servlet>
+        <description>Project_Tables</description>
+        <display-name>Project_Tables</display-name>
+        <servlet-name>Project_Tables</servlet-name>
+         <!--<jsp-file>/project/project-tables.jsp</jsp-file>-->
+        <servlet-class>servlets.Project_Tables</servlet-class>
+        <init-param>
+            <param-name>css</param-name>
+            <param-value>generic.css</param-value>
+        </init-param>
+        <init-param>
+            <param-name>js</param-name>
+            <param-value>local_ajax.js, project-tables.js</param-value>
+        </init-param>
+        <init-param>
+            <param-name>title</param-name>
+            <param-value>Project Tables</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Project_Tables</servlet-name>
+        <url-pattern>/project/project_tables/*</url-pattern>
+    </servlet-mapping>
+   
+    <!-- The following stanza is for the Report for project method only -->
+    <servlet>
+        <description>Report</description>
+        <display-name>Report</display-name>
+        <servlet-name>Report</servlet-name>
+        <servlet-class>servlets.Report</servlet-class>
+        <init-param>
+            <param-name>css</param-name>
+            <param-value>generic.css</param-value>
+        </init-param>
+        <init-param>
+            <param-name>js</param-name>
+            <param-value>local_ajax.js</param-value>
+        </init-param>
+        <init-param>
+            <param-name>title</param-name>
+            <param-value>Project Report</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Report</servlet-name>
+        <url-pattern>/project/report/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- The following stanza is for the opening page -->
+    <welcome-file-list>
+        <welcome-file>Login.html</welcome-file>
+    </welcome-file-list>   
+    
+   
+   <security-constraint>
+        <web-resource-collection>
+            <url-pattern>/admin/*</url-pattern>  
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name> 
+        </auth-constraint>
+    </security-constraint> -->
+
+    <security-constraint>
+        <web-resource-collection>
+            <url-pattern>/project/*</url-pattern>  
+              
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name> 
+            <role-name>user</role-name> 
+        </auth-constraint>
+    </security-constraint>
+    
+    <login-config>
+            <auth-method>FORM</auth-method>
+            <realm-name>Test Realm</realm-name>
+         <form-login-config>
+                  <form-login-page>/Login.html</form-login-page>
+                 <form-error-page>/LogonError.html</form-error-page>
+          </form-login-config>
+     </login-config>-->
+    
+    <error-page>
+        <description>Missing login</description>
+        <error-code>401</error-code>
+        <location>/general-error.html</location>
+    </error-page>
+    -->
+</web-app>

@@ -1,0 +1,3 @@
+#!/bin/sh
+javac Sprites.java Menu.java RunApp.java Launcher.java PlayerForm.java Balls.java Paddles.java PinBall.java
+java RunApp.java

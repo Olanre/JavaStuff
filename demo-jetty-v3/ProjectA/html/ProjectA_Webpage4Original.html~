@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html >
+<head>
+<style type="text/css">
+html { background: #C0C0C0}
+p.p2 {font-size:25px;
+  font-style: oblique;
+   }
+ul{ 
+   font-family:Verdana; font-size : 15pt;
+}
+a:link {text-decoration:none;}    /* unvisited link */
+a:visited {text-decoration:none;} /* visited link */
+a:hover {text-decoration:underline;}   /* mouse over link */
+a:active {text-decoration:underline;}  /* selected link */
+   
+ 
+#content { margin-left:  15%; }
+#navi{float: left; width: 15%; display: inline-block}
+#container{margin-left: 10pts;
+           margin-right: 10pts;
+           }
+</style>
+</head>
+<body>
+    <div id = "banner">
+    <h1 style="text-align:center; letter-spacing:12px;"> CATA Database: User Projects</h1>
+    </div>
+<div id = "container">
+<div id = "navi" style="opacity:0.9;position:absolute;left:20px;width:195px;
+           height:350px;background-color:#ADD8E6; border: thin solid black; font-family:Verdana; font-size: 20px; text-align:center ">
+    
+    <button id="b1" style= "width: 130px">Logout</button>
+    <p>
+    <p>
+    <button id="b3" style="width: 130px"> Manage Projects </button>
+    </p>
+    Specified by user or admin permissions
+    <br>
+    <br>
+    <img id="cir" src="image.jpg" width = "180" height = "120">
+    
+
+</div>
+<div id = "content"> 
+<div style="font-family:verdana;padding:10px;border-radius:10px;border:10px solid #616D7E; width:1000px;
+           height:850px; ">
+    <ul>
+       <li> <a href="ProjectA_Webpage5.html" target="_blank"> Project 1</a> <button id="Rep1" style= "width: 130px"> Report </button>
+       <button id="edit1" style= "width: 130px"> Edit </button> 
+       <button id="del1" style= "width: 130px"> Delete </button> </li>
+       
+       <li> <a href="ProjectA_Webpage5.html" target="_blank"> Project 2</a> <button id="Rep2" style= "width: 130px"> Report </button>
+       <button id="edit2" style= "width: 130px"> Edit </button> 
+       <button id="del2" style= "width: 130px"> Delete </button> </li>
+       
+       <li> <a href="ProjectA_Webpage5.html" target="_blank"> Project 3</a> <button id="Rep3" style= "width: 130px"> Report </button>
+       <button id="edit3" style= "width: 130px"> Edit </button> 
+       <button id="del3" style= "width: 130px"> Delete </button> </li>
+       
+       <li> <a href="ProjectA_Webpage5.html" target="_blank"> Project 4</a> <button id="Rep4" style= "width: 130px"> Report </button>
+       <button id="edit4" style= "width: 130px"> Edit </button> 
+       <button id="del4" style= "width: 130px"> Delete </button> </li>
+        
+        <li> <a href="ProjectA_Webpage5.html" target="_blank"> Project ..</a> <button id="Rep5" style= "width: 130px"> Report </button>
+       <button id="edit5" style= "width: 130px"> Edit </button> 
+       <button id="del5" style= "width: 130px"> Delete </button> </li>
+        
+       <li> <a href="ProjectA_Webpage5.html" target="_blank"> Project ..</a> <button id="Rep6" style= "width: 130px"> Report </button>
+       <button id="edit6" style= "width: 130px"> Edit </button> 
+       <button id="del6" style= "width: 130px"> Delete </button> </li>       
+       
+       <li> <a href="ProjectA_Webpage5.html" target="_blank"> Project n</a> <button id="Rep7" style= "width: 130px"> Report </button>
+       <button id="edit7" style= "width: 130px"> Edit </button> 
+       <button id="del7" style= "width: 130px"> Delete </button> </li>
+    </ul>
+    <hr style="width: 65%; height: 1em; margin: 0 auto;">
+    <p> Projects Shared With Me
+       <ul>
+        <li> <a href="ProjectA_Webpage5.html" target="_blank"> Shared Project 1</a> <button id="Rep1" style= "width: 130px"> Report </button>
+        <button id="edit1" style= "width: 130px"> Edit </button> 
+        <input id="user 1" type="text" size="20" value = " UserName User_email" readonly>  
+        <li> <a href="ProjectA_Webpage5.html" target="_blank"> Shared Project 2</a> <button id="Rep5" style= "width: 130px"> Report </button>
+        <button id="edit5" style= "width: 130px"> Edit </button> 
+        <input id="user 2" type="text" size="20" value = " UserName User_email" readonly> 
+        </ul>
+     </p>
+    <form action="">
+    <fieldset>
+    <legend>Create a Project:</legend>
+    Project Name: <input type="text" size="30" name = 'pjname'><br>
+    Project Id: <input type = 'text' size = '5' id = 'theid' value = '' ><br>
+    Users Who May Access Project: <input type="text" size="60" name = 'access'><br><br>
+    Description:  <textarea id="descrip" rows="4" cols="70"  name = 'descrip'> </textarea>
+    <br><br>Type of Data Recorded:<br>
+    <input type="text" name="Time" value="Time" size = '5' readonly> 
+                <select id = 's1' name = 's1'>
+                <option> Date_Month </option> <option>  String </option>
+                </select>
+              <br>
+    <input type="text" name="GDP" value="GDP" size = '10'> GDP 
+    
+             <select id = "s2" name = "s2" > 
+                   <option>Nominal </option> <option>Real </option>
+              </select> <br>
+    <input type="text" name="Inflation" value="Inflation" size = '10'> Inflation 
+           <select name = "s3"> 
+                   <option> CPI </option> <option>  Dollar figures </option>
+            </select><br>
+    
+    <input type="text" name="Unemployment" value="Unemployment" size = '15'> Unemployment 
+           <select name = "s4"> 
+                   <option> Figures </option> <option> Proportion  </option>
+              </select><br>
+    
+    <input type="text" name="Exchange_rate" value="Exchange rate" size = '16> Exchange_Rate 
+        <select name = "s5">
+         <option> Canadian_Dollars </option> <option> US_dollars </option>
+              </select>
+         <br> 
+     
+     
+     <br>
+    <input type="submit" size="30" value="Submit">
+    </fieldset>
+    </form>       
+       
+</div>
+</div>
+    
+</body>
+
+</html>

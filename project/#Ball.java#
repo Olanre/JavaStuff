@@ -1,0 +1,130 @@
+
+import java.awt.Color;
+import java.awt.geom.Ellipse2D;
+import java.awt.geom.Rectangle2D;
+import java.awt.Rectangle;
+import java.awt.Graphics2D;
+
+import java.util.Random;
+
+/* This class draws the ball and calculates its displacement 
+ * @author Olanrewaju Okunlola
+ */
+public class Ball {
+    /* random generator of ball bounces, only one per class */
+    private static Random random = new Random();
+    /* range of displacements */
+    private static final double BASE_DISPLACEMENT = 1.0;
+    private static final double MAX_DISPLACEMENT = 30.0;
+
+    /* center and radius of ball */
+    private double x, y, radius;
+
+    /* color of ball */
+    private Color color;
+
+    /* displacement vector of ball */
+    private double dx, dy;
+
+    /* ellipse used to draw the ball */
+    private Ellipse2D ellipse = new Ellipse2D.Double();
+    /** the constructor for the ball class which creates in instance of a ball a     nd 
+     *assigns the instance variables to the parameter
+     *@param x, y which are the x and y coordinates
+     *@param raduis which is the ball raduis
+     *@param color which would be the ball color
+     */
+    public Ball( double x, double y, double radius, Color color ) {
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+        this.color = color;
+        this.dx = nextDisplacement();
+        this.dy = nextDisplacement();
+
+        this.ellipse.setFrameFromCenter(x, y, x+radius/2, y+radius/2);
+    }
+    /** SImple getter method to return x coordinate of the ball
+     *and returns the double
+     */
+    public double getX() {
+        return x;
+    }
+    /** SImple getter method to return y coordinate of the ball
+     *and returns the double
+     */
+    public double getY() {
+        return y;
+    }
+    /** SImple getter method to return the x displacement of the ball
+     *and returns the double
+     */
+    public double getDisplacementX() {
+        return dx;
+    }
+    /** SImple getter method to return the y displacement of the ball
+     *and returns the double
+     */
+    public double getDisplacementY() {
+        return dy;
+    }
+    /** SImple setter method to initialize the x displacement of the ball
+     *and returns the double
+     */
+    public void setDisplacementX( double dx ) {
+        this.dx = dx;
+    }
+    /** SImple setter method to initialize the y displacement of the ball
+     *and returns the double
+     */
+    public void setDisplacementY( double dy ) {
+        this.dy = dy;
+    }
+    
+    /** Main paint component draws the ball
+     * @param g which is a graphics object
+     */ 
+    public void paint( Graphics2D g ) {
+        Color c = g.getColor();
+        g.setColor( color );
+        g.fill( ellipse );
+        g.setColor( Color.WHITE );
+        g.draw( ellipse );
+        g.setColor( c );
+    }
+    /** Calculating ball displacement method
+     */
+    public static double nextDisplacement() {
+       
+        return BASE_DISPLACEMENT + random.nextDouble()*MAX_DISPLACEMENT;
+    }
+    /** Method to launch the ball by the given position j
+     *@param j which is a double
+     */
+    public void launchball(double j){
+        dy = dy - j; 
+    }
+    /** Method to update the position vector of the ball
+    */
+    public void updatePosition( Rectangle area ) {
+        int code = area.outcode( x+dx, y+dy );
+
+        if ( (code & Rectangle2D.OUT_BOTTOM ) != 0) {
+            dy = -nextDisplacement();
+        }
+        else if ( (code & Rectangle2D.OUT_TOP) != 0 ) {
+            dy = nextDisplacement();
+        }
+
+        if ( (code & Rectangle2D.OUT_LEFT ) != 0) {
+            dx = nextDisplacement();
+        }
+        else if ( (code & Rectangle2D.OUT_RIGHT) != 0 ) {
+            dx = -nextDisplacement();
+        }
+
+        x += dx;
+        y += dy;
+        ellipse.setFrameFromCenter(x, y, x+radius/2, y+radius/2);
+    }
+}

@@ -1,0 +1,23 @@
+201040292
+Olanrewaju Okunlola
+
+PinBall.java is a source file which is to be modified by the user to  
+design a unique PinBall game. 
+Classes were built to ensure each class was a module on its own, the 
+classes were: 
+Sprites.java - the fixed sprites the ball bounces off to gain points
+ Menu.java - a menu bar at the top of the screen
+ Launcher.java - the launcher pad the ball launches from at the start of the
+ 					  game
+ PlayerForm.java - a form at the right hand side of the game which allows 
+ 					    the user to view his progress and pause, start the game
+ Balls.java - the ball being used
+ Paddles.java - the paddles used to deflect the ball away 
+ PinBall.java - the gaming class 
+ RunApp.java- used to run all the apps simulatanously. 
+ In addition two interfaces were used Animate.java and Drawable.java. 
+test_pinball is a shell script that compiles and runs the main method
+the command ./test_pinball, at the shell prompt will run a test. 
+In the case it is unavaliable or permission is denied the following command whill
+% javac RunApp.java
+% java RunApp

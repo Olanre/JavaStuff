@@ -1,0 +1,50 @@
+package db;
+
+public class Projects {
+    private String username;           // user name for record         // user role in database
+    private String user-email;        // users email adress 
+    private String projectname;      // users password
+    private String proj-type; 
+    private long recordID;          // unique integer identifying this record
+
+    public Projects(
+         long id, String proj-name, String name, String email )
+    {
+    	  this.recordID = id;
+        this.username = user;
+        this.user-email = email;
+        this.proj-type = type;
+        this.projectname = proj-name;
+    }
+
+    
+    public String getProjType() {
+        return proj-type;
+    }
+
+    public String getProjectName() {
+        return projectname;
+    }
+
+    public String getEmail() {
+        return user-mail;
+    }
+
+    public long getRecordID() {
+        return recordID;
+    }
+
+    public void setRecordID( long id ) {
+        recordID = id;
+    }
+
+    public String getName() {
+        return username;
+    }
+
+
+    public String toString() {
+        return String.format("%d %s %s %s",
+            recordID,  projectname , username, user-email);
+    }
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="bp/src"/>
+	<classpathentry kind="src" path="demo/src"/>
+	<classpathentry kind="src" path="ProjectA/src"/>
+	<classpathentry kind="src" path="server"/>
+	<classpathentry kind="lib" path="jetty/javax.servlet-3.0.0.v201112011016.jar"/>
+	<classpathentry kind="lib" path="jetty/jetty-all-server-8.1.9.v20130131.jar"/>
+	<classpathentry kind="lib" path="jetty/jetty-all.jar"/>
+	<classpathentry kind="lib" path="jetty/servlet-api-3.0.jar"/>
+	<classpathentry kind="lib" path="lib/gson-2.2.2.jar"/>
+	<classpathentry kind="lib" path="lib/sqlite-jdbc-3.7.2.jar"/>
+	<classpathentry kind="lib" path="ProjectA/src/db/UPManager.interface"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

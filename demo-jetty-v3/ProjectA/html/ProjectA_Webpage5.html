@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html >
+<head>
+<script type="text/javascript" >
+function myFunction()
+{
+window.alert("You recorded as %s")
+}
+</script>
+<style type="text/css">
+html { background: #C0C0C0}
+p.p2 {font-size:15px;
+  font-style: oblique;
+   }
+ul{ 
+   font-family:Verdana; font-size : 12pt;
+   font-color
+}
+a:link {background-color:#659EC7;}    /* unvisited link */
+a:visited {background-color:#8E35EF} /* visited link */
+a:hover {background-color: #6D7B8D;}   /* mouse over link */
+a:active {background-color: #6D7B8D;}  /* selected link */ 
+ 
+#content { margin-left:  15%; }
+#navi{float: left; width: 15%; display: inline-block}
+#container{margin-left: 10pts;
+           margin-right: 10pts;
+           }
+</style>
+</head>
+<body>
+    <div id = "banner">
+    <h1 style="text-align:center; letter-spacing:12px;"> CATA Database</h1>
+    </div>
+<div id = "container">
+<div id = "navi" style="opacity:0.9;position:absolute;left:20px;width:195px;
+           height:350px;background-color:#ADD8E6; border: thin solid black; font-family:Verdana; font-size: 20px; text-align:center ">
+    
+    <button id="b1" style= "width: 130px">Logout</button>
+    <p>
+    <p>
+    <button id="b3" style="width: 130px" onclick="window.location.href='ProjectA_Webpage4.html'"> Manage Projects </button>
+    </p>
+    Specified by user or admin permissions
+    <br>
+    <br>
+    <img id="cir" src="image.jpg" width = "180" height = "120">
+    
+
+</div>
+<div id = "content"> 
+<div style="font-family:verdana;padding:10px;border-radius:10px;border:10px solid #616D7E; width:1000px;
+           height:450px; ">
+    
+    <form action="">
+    <fieldset>
+    
+    <legend></legend>
+    Project Name: <input type="text" size="30" name = "proj-name"><br>
+    Project Id: <input type = 'text' size = '5' id = 'theid' value = '' readonly><br>
+    Description: <br> <textarea id="descrip" rows="5" cols="60" >
+    </textarea><br><br>
+    Type of Data Recorded: 
+       
+        <ul>
+         <li name = 'Time'> <a name = 'Time' href='javascript:window.alert(&quot; You recorded as %s&quot;);' >Time series </a> 
+              
+         </li>
+         <li> <a href='javascript:window.alert(&quot; You recorded as %s&quot;);'> GDP </a> 
+              
+        </li>
+        
+        <li> <a href='javascript:window.alert(&quot; You recorded as %s&quot;);' > Inflation Rate </a> 
+              
+         </li>
+        
+        <li> <a href='javascript:window.alert(&quot; You recorded as %s&quot;);' > Unemployment </a> 
+              
+         </li>
+
+        
+        <li> <a href='javascript:window.alert(&quot; You recorded as %s&quot;);' > Exchange Rate </a> 
+             
+         </li>
+      
+        
+       
+                  
+        <li> <button id="add"  style= "width: 130px"> Add </button> </li> 
+        
+       </ul>
+        Users Who May Access Project: <input type="text" size="60" ><br>
+      <br> 
+      <button id='submit' type = 'submit'  style= 'width: 130px'> Submit Changes </button> 
+    </fieldset>  
+    </form>       
+       
+</div>
+</div>
+    
+</body>
+
+</html>

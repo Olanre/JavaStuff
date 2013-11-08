@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html >
+<head>
+<style type="text/css">
+html { background: #C0C0C0}
+p.p2 {font-size:25px;
+  font-style: oblique;
+   }
+ul{ 
+   font-family:Verdana; font-size : 15pt;
+}
+a:link {text-decoration:none;}    /* unvisited link */
+a:visited {text-decoration:none;} /* visited link */
+a:hover {text-decoration:underline;}   /* mouse over link */
+a:active {text-decoration:underline;}  /* selected link */
+   
+ 
+#content { margin-left:  15%; }
+#navi{float: left; width: 15%; display: inline-block}
+#container{margin-left: 10pts;
+           margin-right: 10pts;
+           }
+</style>
+</head>
+<body>
+    <div id = "banner">
+    <h1 style="text-align:center; letter-spacing:12px;"> CATA Database</h1>
+    </div>
+<div id = "container">
+<div id = "navi" style="opacity:0.9;position:absolute;left:20px;width:195px;
+           height:350px;background-color:#ADD8E6; border: thin solid black; font-family:Verdana; font-size: 20px; text-align:center ">
+    
+    <button id="b1" style= "width: 130px">Logout</button>
+    <p>
+    <p>
+    <button id="b3" style="width: 130px" onclick="window.location.href='ProjectA_Webpage4.html'"> Manage Projects </button>
+    </p>
+    <p>
+    <button id="b3" style="width: 130px" onclick="window.location.href='ProjectA_Webpage6.html'"> Manage Users </button>
+    </p>
+    Specified by user or admin permissions
+    <br>
+    <br>
+    <img id="cir" src="image.jpg" width = "180" height = "120">
+    
+
+</div>
+<div id = "content"> 
+<div style="font-family:verdana;padding:10px;border-radius:10px;border:10px solid #616D7E; width:1000px;
+           height:670px; ">
+     
+    <br>
+     
+    <form action="">
+    <fieldset>
+    <legend> Display Stats:</legend>  
+        <br>
+       
+       <input type="radio" name="stat" value = 'sum' checked> Sum <br>   
+        <br>
+        <input type='radio' name='stat' value = 'count' >Count <br>
+
+        <br>
+        <input type='radio' name='stat' value = 'mean' > Mean <br>
+        <br>
+        
+        <input type='radio' name='stat' value = 'min' > Minimum Value <br> 
+         <br>
+        
+        <input type='radio' name="stat" value = 'max' > Max Value <br> 
+         
+         
+        
+        <input type = 'hidden' name = 'proj_id' value = 'me' >	
+        <br>
+        
+        <select name = "sort_type"> <option> Highest_to_Lowest </option> <option selected> Lowest_to_Highest </option>  </select>
+        <select name = 'sort_col'> <option> Time </option> <option> GDP </option> 
+        <option> Inflation </option> <option selected> Unemployment </option> <option> Exchange_rate </option>  </select>
+        
+        <button id='Generate' style= 'width: 100px'> Generate </button>
+        </fieldset>
+        
+   </form>
+   <br>
+   <table id = "table1" border = "1">
+      <tr>
+        <th> Stats </th> <th>Time series</th> <th> GDP </th> <th> Inflation </th> <th> Unemployment </th> <th> Exchange Rate </th> 
+       </tr>
+       <tr>
+          <td> <input type='text' size='10' value = '' readonly> </td><td> <input type="text" size="10" readonly>  </td> 
+           <td> <input type="text" size="30" readonly>  </td> <td> <input type="text" size="10" readonly>
+            <td> <input type="text" size="10" readonly>  </td>  <td> <input type="text" size="10" readonly> </td> 
+          
+       </tr>
+       <tr>
+           <td> <input type="text" size="10" readonly> </td><td> <input type="text" size="10" readonly>  </td> 
+           <td> <input type="text" size="30" readonly>  </td> <td> <input type="text" size="10" readonly>
+            <td> <input type="text" size="10" readonly>  </td>  <td> <input type="text" size="10" readonly> </td> 
+       </tr>  
+           
+    </table>
+    
+    <br> 
+    
+     
+</div>
+</div>
+    
+</body>
+
+</html>

@@ -1,0 +1,174 @@
+(function() {
+
+function delete_tuple( evt ) {
+    var cancelButton = null;
+    var delButton = this;
+    if ( delButton.textContent == "Delete" ) {
+        var r = confirm("Do you want to delete this row?");
+        if(r == true){
+        	  
+        	   var tr_to_delete = delButton.parentNode.parentNode;
+        	   var time_field = tr_to_delete.querySelector("#time");
+             var gdp_field = tr_to_delete.querySelector("#gdp");
+             var inflation_field = tr_to_delete.querySelector("#inflation");
+             var unemploy_field = tr_to_delete.querySelector("#unemploy");
+             var exchange_field = tr_to_delete.querySelector("#exchange");
+             var Id_field = tr_to_delete.querySelector("#Id");
+             var delete_user = {
+                time: time_field.value,
+                gdp : gdp_field.value,
+                inflation : inflation_field.value,
+                unemply: unemploy_field.value,
+                exchange: exchange_field.value,
+                id = Id_field.value };
+                
+             var json = JSON.stringify(delete_user );
+             var tr_to_delete = delButton.parentNode.parentNode;
+             local_ajax_mod.ajax_request( {
+              method : "POST",
+              link: window.location.pathname + '/delete_row',
+              doc : json,
+              mime : 'application/json',
+             ok_fn :  function( req ) {
+                try {
+                    var obj = JSON.parse( req.responseText );
+                    console.log( obj );
+                    if ( obj == 1 ) { // delete the row
+                        tr_to_delete.parentNode.removeChild( tr_to_delete );
+                    }
+                   else {
+                       alert("delete failed");
+                    }
+                }
+                catch( e ) {
+                    console.log( e );
+                }
+            },
+            err_fn :  function( req ) {
+                alert( 'failed: ' + req );
+                console.log( req );
+            }
+        } );
+     }
+    }
+}
+
+function delete_button_init() {
+    var buts = document.querySelectorAll("#delete");
+    var i;
+    for( i = 0 ; i < buts.length; i++ ) {
+        buts[i].addEventListener('click', delete_tuple, false);
+    }
+}
+
+function update_row( evt ) {
+      var Updatebutton = this;
+      var tr_to_update = Updatebutton.parentNode.parentNode;
+      var time_field = tr_to_update.querySelector("#time");
+       var gdp_field = tr_to_update.querySelector("#gdp");
+       var inflation_field = tr_to_update.querySelector("#inflation");
+       var unemploy_field = tr_to_update.querySelector("#unemploy");
+      var exchange_field = tr_to_update.querySelector("#exchange");
+       var Id_field = tr_to_update.querySelector("#Id");
+      var update_tuple = {
+           time: time_field.value,
+          gdp : gdp_field.value,
+          inflation : inflation_field.value,
+           unemply: unemploy_field.value,
+           exchange: exchange_field.value,
+          id = Id_field.value };
+              
+    var json = JSON.stringify( update_tuple );
+    local_ajax_mod.ajax_request( {
+        method : "POST",
+        link: window.location.pathname + '/update_tuple',
+        doc : json,
+        mime : 'application/json',
+        ok_fn :  function( req ) {
+            try {
+                var obj = JSON.parse( req.responseText );
+                console.log( obj );
+            }
+            catch( e ) {
+                console.log( e );
+            }
+        },
+        err_fn :  function( req ) {
+            alert( 'failed: ' + req );
+            console.log( req );
+        }
+    } );
+}
+
+
+
+function delete_button_init() {
+    var buts = document.querySelectorAll("table.editor td button.del");
+    var i;
+    for( i = 0 ; i < buts.length; i++ ) {
+        buts[i].addEventListener('click', delete_item, false);
+    }
+}
+
+function edit_item( evt )  {
+    var editdata = this;
+    if ( editdata.getAttribute("readonly") != null ) {
+        editdata.removeAttribute("readonly");
+        alert("You may now edit this data value, click Update to save your Changes")
+     } else {
+     	   editdata.setAttribute("readonly")
+     	
+     }
+        
+}
+
+function edit_button_init() {
+    var datas = document.querySelectorAll("table.editor td input");
+    var i;
+    for( i = 0 ; i < buts.length; i++ ) {
+        datas[i].addEventListener('click', edit_item, false);
+    }
+}
+
+function update_button_init() {
+    var update = document.querySelectorAll("update");
+    var i;
+    for( i = 0 ; i < buts.length; i++ ) {
+        update[i].addEventListener('click', update_row, false);
+    }
+}
+
+/**function datetime_parse( str ) {
+    var mat = str.match(/(\d+)\/(\d+)\/(\d+)\s+(\d+):(\d+)/);
+    if ( mat != null ) {
+        var year = parseInt(mat[1])+2000;
+        var month = parseInt(mat[2]) - 1;
+        var day = parseInt(mat[3]);
+        var hour = parseInt(mat[4]);
+        var minute = parseInt(mat[5]);
+        return new Date( year, month, day, hour, minute );
+    }
+    else {
+        return null;
+    }
+}
+
+function datetime_format( dt ) {
+    var pad = function(n){return n<10 ? '0'+n : n};
+    var y = pad(dt.getFullYear()-2000);
+    var m = pad(dt.getMonth() + 1);
+    var d = pad(dt.getDate());
+    var h = pad(dt.getHours());
+    var min = pad(dt.getMinutes());
+    return y + '/' + m + '/' + d + ' ' + h + ':' + min;
+} */
+
+
+
+window.addEventListener( 'load', function(evt) {
+        delete_button_init();
+        edit_button_init();
+        update_button_init();
+    }, false );
+
+})();

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html >
+<head>
+<style type="text/css">
+html { background: #C0C0C0}
+p.p2 {font-size:25px;
+  font-style: oblique;
+   }
+ul{ 
+   font-family:Verdana; font-size : 15pt;
+}
+a:link {text-decoration:none;}    /* unvisited link */
+a:visited {text-decoration:none;} /* visited link */
+a:hover {text-decoration:underline;}   /* mouse over link */
+a:active {text-decoration:underline;}  /* selected link */
+   
+ 
+#content { margin-left:  15%; }
+#navi{float: left; width: 15%; display: inline-block}
+#container{margin-left: 10pts;
+           margin-right: 10pts;
+           }
+</style>
+</head>
+<body>
+    <div id = "banner">
+    <h1 style="text-align:center; letter-spacing:12px;"> CATA Database: User Management</h1>
+    </div>
+<div id = "container">
+<div id = "navi" style="opacity:0.9;position:absolute;left:20px;width:195px;
+           height:430px;background-color:#ADD8E6; border: thin solid black; font-family:Verdana; font-size: 20px; text-align:center ">
+    
+    <button id="b1" style= "width: 130px">Logout</button>
+    <p>
+    <p>
+    <button id="b2" style="width: 130px" onclick='window.location.href=&quot;ProjectA_Webpage2.html&quot;'> Manage Projects </button>
+    </p>
+    <p>
+    <button id="b3" style="width: 130px"> Manage Users </button>
+    </p>
+    <p>
+    <button id="b3" style="width: 130px" onclick="window.location.href='ProjectA_Webpage4.html'"> My Projects </button>
+    </p>
+    Specified by user or admin permissions
+    <br>
+    <br>
+    <img id="cir" src="image.jpg" width = "180" height = "120">
+    
+
+</div>
+<div id = "content"> 
+<div style="font-family:verdana;padding:10px;border-radius:10px;border:10px solid #616D7E; width:1000px;
+           height:450px; ">
+    <table id = "table1" border = "1">
+      <tr>
+        <th> Users </th> <th> User_email </th> <th> Password </th> <th> Projects </th> <th>Permission Type</th>
+       </tr>
+       <tr>
+         <td> <input type="text" size="20">  </td>  <td> <input type="text" size="20">  </td> <td> <input type="text" size="20" readonly>
+          </td>  <td> <select id = "1prj"> <option> Project1 </option> <option> Project2 </option>    </select>   </td> 
+          <td>  <select id = "user/admin1"> <option value = "User1" selected> User </option> <option value = "admin1"> Administrator </option>  </select> </td>
+          <td> <button id="del1" style= "width: 130px"> Delete User </button> </td> 
+                                                                                  
+                                                                                  
+       
+       </tr>
+       <tr>
+         <td> <input type="text" size="20">  </td>  <td> <input type="text" size="20">  </td> <td> <input type="text" size="20" readonly>
+          </td>  <td> <select id = "2prj"> <option> Project1 </option> <option> Project2 </option>    </select>        </td> 
+          <td>  <select id = "user/admin2"> <option value = "User2" selected > User </option> <option value = "admin2"> Administrator </option>  </select>    </td>
+          <td> <button id="del2" style= "width: 130px"> Delete User </button> </td>                                                                         
+                                                                                  
+       
+       </tr>
+       <tr>
+         <td> <input type="text" size="20">  </td>  <td> <input type="text" size="20">  </td> <td> <input type="text" size="20" readonly>
+          </td>  <td> <select id = "3prj"> <option> Project1 </option> <option> Project2 </option>    </select>        </td> 
+          <td>  <select id = "user/admin3"> <option value = "User3"> User </option> <option value = "admin3" selected > Administrator </option>  </select>    </td> 
+          <td> <button id="del3" style= "width: 130px"> Delete User </button> </td>                                                                         
+                                                                                  
+       
+       </tr>
+       
+       <tr>
+         <td> <input type="text" size="20">  </td>  <td> <input type="text" size="20">  </td> <td> <input type="text" size="20" readonly>
+          </td>  <td> <select id = "4prj"> <option> Project1 </option> <option> Project2 </option>    </select>        </td> 
+         <td>  <select id = "user/admin4"> <option value = "User4" selected> User </option> <option value = "admin4"> Administrator </option>  </select>    </td>
+          <td> <button id="del4" style= "width: 130px"> Delete User </button> </td>                                                                         
+                                                                                  
+       
+       </tr>
+    </table> 
+    <br>  
+    <form action='' method='post'>
+    <fieldset>
+    <legend>Create a User:</legend>
+    User Name: <input type="text" size="20" id="user"><br>
+    User Email: <input type="text" size="20" id = "email"><br>
+    User Role: <input type="text" size="10" id = "role"><br>
+    User PassWord: <input type="text" size="20" id = "password"><br>
+    PassWord Confirm: <input type="text" size="20"><br>
+    <input type="submit" size="30" value="Submit">
+    </fieldset>
+    </form>       
+       
+</div>
+</div>
+    
+</body>
+
+</html>

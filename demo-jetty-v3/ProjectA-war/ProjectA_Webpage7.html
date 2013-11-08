@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html >
+<head>
+<style type="text/css">
+html { background: #C0C0C0}
+p.p2 {font-size:25px;
+  font-style: oblique;
+   }
+ul{ 
+   font-family:Verdana; font-size : 15pt;
+}
+a:link {text-decoration:none;}    /* unvisited link */
+a:visited {text-decoration:none;} /* visited link */
+a:hover {text-decoration:underline;}   /* mouse over link */
+a:active {text-decoration:underline;}  /* selected link */
+   
+ 
+#content { margin-left:  15%; }
+#navi{float: left; width: 15%; display: inline-block}
+#container{margin-left: 10pts;
+           margin-right: 10pts;
+           }
+</style>
+</head>
+<body>
+    <div id = "banner">
+    <h1 style="text-align:center; letter-spacing:12px;"> CATA Database</h1>
+    </div>
+<div id = "container">
+<div id = "navi" style="opacity:0.9;position:absolute;left:20px;width:195px;
+           height:350px;background-color:#ADD8E6; border: thin solid black; font-family:Verdana; font-size: 20px; text-align:center ">
+    
+    <button id="b1" style= "width: 130px">Logout</button>
+    <p>
+    <p>
+    <button id="b3" style="width: 130px" onclick="window.location.href='ProjectA_Webpage4.html'"> Manage Projects </button>
+    </p>
+    Specified by user or admin permissions
+    <br>
+    <br>
+    <img id="cir" src="image.jpg" width = "180" height = "120">
+    
+
+</div>
+<div id = "content"> 
+<div style="font-family:verdana;padding:10px;border-radius:10px;border:10px solid #616D7E; width:1000px;
+           height:470px; ">
+    <table id = "table1" border = "1">
+      <tr>
+        <th>Time series</th> <th> GDP </th> <th> Inflation </th> <th> Unemployment </th> <th> Exchange Rate </th> 
+       </tr>
+       <tr>
+         <td> <a href='javascript:window.alert(&quot; You Cannot Edit this data &quot;);' id = 'Time' > %s </a>  </td>  <td> <input type="text" size="30" readonly>  </td>
+          <td> <input type="text" size="10" readonly> <td> <input type="text" size="10" readonly>  </td>  
+          <td> <input type="text" size="20" readonly> </td>
+          <td> <button id="del1" style= "width: 100px"> Delete </button> 
+       	<button id="edit1" style= "width: 100px"> Edit </button> </td>                                                                               
+   
+       </tr>
+       <tr>
+         <td> <input type="text" size="10" readonly>  </td>  <td> <input type="text" size="30" readonly>  </td>
+          <td> <input type="text" size="10" readonly> <td> <input type="text" size="10" readonly>  </td>  
+          <td> <input type="text" size="20" readonly> </td>
+          <td> <button id="del2" style= "width: 100px"> Delete </button> 
+       	<button id="edit2" style= "width: 100px"> Edit </button> </td>                                                                               
+   
+       </tr>
+       <tr>
+         <td> <input type="text" size="10" readonly>  </td>  <td> <input type="text" size="30" readonly>  </td>
+          <td> <input type="text" size="10" readonly> <td> <input type="text" size="10" readonly>  </td>  
+          <td> <input type="text" size="20" readonly> </td>
+          <td> <button id="del3" style= "width: 100px"> Delete </button> 
+       	<button id="edit3" style= "width: 100px"> Edit </button> </td>                                                                               
+   
+       </tr>
+       
+       <tr>
+         <td> <input type="text" size="10" readonly>  </td>  <td> <input type="text" size="30" readonly>  </td>
+          <td> <input type="text" size="10" readonly> <td> <input type="text" size="10" readonly>  </td>  
+          <td> <input type="text" size="20" readonly> </td> <input type="hidden" size="20" readonly>
+          <td> <button id="del4" style= "width: 100px"> Delete </button> 
+       	<button id="edit4" style= "width: 100px"> Edit </button> </td>                                                                               
+   
+       </tr>
+        <tr>
+         <td> <input type="text" size="10" readonly>  </td>  <td> <input type="text" size="30" readonly>  </td>
+          <td> <input type="text" size="10" readonly> <td> <input type="text" size="10" readonly>  </td>  
+          <td> <input type="text" size="20" readonly> </td>
+          <td> <button id="del5" style= "width: 100px"> Delete </button> 
+       	<button id="edit5" style= "width: 100px"> Edit </button> </td>                                                                               
+   
+       </tr>
+        <tr>
+         <td> <input type="text" size="10" readonly>  </td>  <td> <input type="text" size="30" readonly>  </td>
+          <td> <input type="text" size="10" readonly> <td> <input type="text" size="10" readonly>  </td>  
+          <td> <input type="text" size="20" readonly> </td>
+          <td> <button id="del6" style= "width: 100px"> Delete </button> 
+       	<button id="edit6" style= "width: 100px"> Edit </button> </td>                                                                               
+   
+       </tr>
+       <tr>
+        <td> <button id="Add" style= "width: 100px"> Add new Data </button>  </td>
+       </tr>
+           
+    </table> 
+    <br> <button id="Report" style= "width: 100px"> Report </button>
+    <br>
+    <button id="Save" style= "width: 100px"> SAVE </button> 
+        
+       
+</div>
+</div>
+    
+</body>
+
+</html>
